@@ -27,36 +27,25 @@ const page = () => {
   
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
-  const message = "Exxplore Your Music";
+  const message = "Explore Your Music";
 
   useEffect(() => {
-    const colorInterval = setInterval(() => {
-      setCurrentColorIndex((currentIndex) => (currentIndex + 1) % textColors.length);
-    }, 2000);
-
-    return () => clearInterval(colorInterval);
-  }, [textColors.length]);
-
-  useEffect(() => {
-    setDisplayText(""); // Reset the display text when the component mounts or the message changes
-    let charIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (charIndex < message.length) {
-        setDisplayText((prev) => {
-          const nextChar = message[charIndex];
-          if (typeof nextChar !== 'undefined') {
-            return prev + nextChar;
-          }
-          return prev;
-        });
-        charIndex++;
-      } else {
-        clearInterval(typingInterval); // Clear interval when the end of the message is reached
+  setDisplayText(""); // Reset the display text when the component mounts or the message changes
+  let charIndex = 0;
+  const typingInterval = setInterval(() => {
+    if (charIndex < message.length) {
+      const nextChar = message[charIndex]; // Get the next character from the message
+      if (nextChar !== undefined) { // Check if nextChar is not undefined
+        setDisplayText((prev) => prev + nextChar);
       }
-    }, 100);
+      charIndex++;
+    } else {
+      clearInterval(typingInterval); // Clear interval when the end of the message is reached
+    }
+  }, 100);
 
-    return () => clearInterval(typingInterval);
-  }, [message]);
+  return () => clearInterval(typingInterval);
+}, [message]);
 
   const currentColor = textColors[currentColorIndex];
 

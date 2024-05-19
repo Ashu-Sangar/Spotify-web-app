@@ -3,7 +3,7 @@
 import React from 'react';
 
 const TopArtists = () => {
-    return <div>Top Artists Page</div>;
+    return <div>Top Artist Page</div>;
 };
 
 export default TopArtists;

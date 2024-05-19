@@ -67,6 +67,7 @@
 
 .animate-pulse {
   animation: pulse-animation 2s infinite;
+  cursor: pointer;
 }
 
 .options-header {
