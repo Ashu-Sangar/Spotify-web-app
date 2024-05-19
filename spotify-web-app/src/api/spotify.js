@@ -1,5 +1,4 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -50,6 +49,7 @@ export function SpotifyComponent() {
         setToken("");
         window.localStorage.removeItem("token");
     };
+
     return (
         <div>
             {!token ? (

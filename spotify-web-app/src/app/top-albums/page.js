@@ -46,7 +46,7 @@ const AlbumGrid = () => {
   }, []);
 
   useEffect(() => {
-    updateDisplayedCells(gridSize); // Ensure displayed cells are updated when gridSize or cells change
+    updateDisplayedCells(gridSize);
   }, [cells, gridSize]);
 
   const updateDisplayedCells = (size) => {
@@ -110,7 +110,7 @@ const AlbumGrid = () => {
                 <img src={cell.coverUrl} alt={cell.name} className="square-image" />
               </a>
             </div>
-            <div className="album-title">{cell.name}</div> {/* Display the title below the image */}
+            <div className="album-title">{cell.name}</div>
           </div>
         ))}
       </div>
