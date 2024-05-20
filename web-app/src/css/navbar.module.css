@@ -1,0 +1,31 @@
+.navbar {
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Distributes space between and around content items along a horizontal line */
+  align-items: center;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0 20px; /* Adds horizontal spacing between nav items */
+  
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #1DB954; /* Spotify green for hover state */
+}
