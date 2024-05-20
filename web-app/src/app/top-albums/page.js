@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import '@/app/albumgrid.css';
+import '@/css/albumgrid.css';
 import axios from "axios";
 import html2canvas from 'html2canvas';
-import styles from '@/app/pageStyle.css';
+import Navbar from '@/components/Navbar';
 
 const ALBUM_ENDPOINT = 'https://api.spotify.com/v1/me/top/tracks';
 
@@ -86,40 +86,38 @@ const AlbumGrid = () => {
   };
 
   return (
-    <div className="album-grid-container" style={{ position: 'relative' }}>
-      <h1 style={{ color: 'white', position: 'relative', zIndex: 10 }}>Your Top Albums</h1>
-      <div className="label-input-container">
-        <label htmlFor="grid-size-input" className="grid-size-label">Enter a Dimension:</label>
-        <input
-          id="grid-size-input"
-          type="number"
-          min="1"
-          max={maxGridSize}
-          value={gridSize}
-          onChange={handleGridSizeChange}
-          className="grid-size-input"
-        />
-        <button onClick={randomizeGrid} className="randomize-button">Randomize</button>
-        <button onClick={downloadGrid} className="randomize-button">Download Grid</button>
-      </div>
-      <div id="capture" className="grid-container" style={{ gridTemplateColumns: `repeat(${gridSize}, 1fr)` }}>
-        {displayedCells.map(cell => (
-          <div key={cell.id} className="grid-cell">
-            <div className="square-wrapper">
-              <a href={cell.spotifyLink} target="_blank" rel="noopener noreferrer">
-                <img src={cell.coverUrl} alt={cell.name} className="square-image" />
-              </a>
+    <>
+      <Navbar />  {/* This is where the Navbar component is rendered */}
+      <div className="album-grid-container" style={{ position: 'relative' }}>
+        <h1 style={{ color: 'white', position: 'relative', zIndex: 10 }}>Your Top Albums</h1>
+        <div className="label-input-container">
+          <label htmlFor="grid-size-input" className="grid-size-label">Enter a Dimension:</label>
+          <input
+            id="grid-size-input"
+            type="number"
+            min="1"
+            max={maxGridSize}
+            value={gridSize}
+            onChange={handleGridSizeChange}
+            className="grid-size-input"
+          />
+          <button onClick={randomizeGrid} className="randomize-button">Randomize</button>
+          <button onClick={downloadGrid} className="randomize-button">Download Grid</button>
+        </div>
+        <div id="capture" className="grid-container" style={{ gridTemplateColumns: `repeat(${gridSize}, 1fr)` }}>
+          {displayedCells.map(cell => (
+            <div key={cell.id} className="grid-cell">
+              <div className="square-wrapper">
+                <a href={cell.spotifyLink} target="_blank" rel="noopener noreferrer">
+                  <img src={cell.coverUrl} alt={cell.name} className="square-image" />
+                </a>
+              </div>
+              <div className="album-title">{cell.name}</div>
             </div>
-            <div className="album-title">{cell.name}</div>
-          </div>
-        ))}
-      </div>
-      <div className={styles.backHomeContainer}>
-        <button className={`${styles.pulseAnimation} mt-12`}>
-          <Link href="/">Back to Home</Link>
-        </button>
-      </div>
-    </div>
+          ))}
+        </div>
+        </div>
+    </>
   );
 };
 

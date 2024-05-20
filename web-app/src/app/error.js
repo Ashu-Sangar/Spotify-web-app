@@ -1,6 +1,6 @@
 "use client";
 
-import styles from '@/app/pageStyle.css'; 
+import styles from '@/css/pageStyle.css'; 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MusicNotes } from '@/components/MusicNotes';

@@ -27,19 +27,18 @@
 
 .featuresSection .featureCard {
   padding: 1.5rem;
-  /* Additional styling for your feature cards */
 }
 
 /* Styles for the music note animation */
 .music-note {
   position: absolute;
   top: -10%; 
-  font-size: 50px; /* Adjust size as needed */
+  font-size: 50px;
   animation-name: floatUp;
   animation-timing-function: ease-in;
-  animation-duration: 4s; /* Adjust duration as needed */
+  animation-duration: 4s;
   animation-iteration-count: infinite;
-  animation-delay: var(--animation-delay); /* Use a CSS variable to randomize delay */
+  animation-delay: var(--animation-delay); 
 }
 
 /* Keyframes for the music note floating animation */
@@ -71,21 +70,21 @@
 }
 
 .options-header {
-  font-size: 23px; /* Adjust size as needed */
+  font-size: 23px; 
   padding: 10px;
   text-align: center;
-  margin-bottom: 20px; /* Space between header and options */
+  margin-bottom: 20px; 
 }
 
 .options-menu {
   display: flex;
-  justify-content: center; /* Centers items horizontally */
+  justify-content: center;
   gap: 4rem;
 }
 
 .option-item {
   font-size: 9px;
   padding: 10px;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px; 
   text-align: center;
 }

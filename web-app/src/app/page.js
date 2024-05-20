@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import styles from '../app/pageStyle.css';
+import styles from '@/css/pageStyle.css';
 import { MusicNotes } from '@/components/MusicNotes';
 import { SpotifyComponent } from '@/api/spotify';
 
@@ -58,7 +58,7 @@ const Page = () => {
             {displayText}
           </h1>
           <p className="text-md mt-4 text-white">
-            Visualize your Spotify favorites in a whole new way.
+            Visualize your Spotify favorites.
           </p>
         </section>
         <section className={`${styles.featuresSection} mt-10`}>

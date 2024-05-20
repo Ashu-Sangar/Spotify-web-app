@@ -8,15 +8,14 @@
     width: 100vw;
     overflow: hidden;
     position: relative;
-    min-height: 100vh;
-    padding-top: 2vh;
-    background: linear-gradient(to bottom, #000000, #221c35); /* Example gradient from black to dark blue */
+    padding-top: 6vh;
+    background: linear-gradient(to bottom, #000000, #221c35);
 }
 
 .album-grid-container::before {
     content: '';
     position: absolute;
-    top: 100px;
+    top: 123px;
     left: 0;
     width: 100%;
     height: 4px;
@@ -26,8 +25,8 @@
 
 .grid-container {
     display: grid;
-    width: 55vw; /* Decrease the width to 60vw or any value you prefer */
-    grid-template-columns: repeat(auto-fill, minmax(80px, var(--cell-size))); /* Using CSS variable */
+    width: 55vw; 
+    grid-template-columns: repeat(auto-fill, minmax(80px, var(--cell-size)));
     gap: 1vw;
     padding: 20px;
     margin-bottom: 5vh;
@@ -42,26 +41,26 @@
     align-items: center;
     box-sizing: border-box;
     overflow: hidden;
-    position: relative; /* Required for absolute positioning of the title */
+    position: relative; 
     cursor: pointer;
     padding: 8px;
 }
 
 .grid-cell:hover .square-wrapper {
     position: relative;
-    top: -5px; /* Adjust the value as needed */
+    top: -5px; 
 }
 
 .grid-cell a:hover {
-    cursor: pointer; /* Change cursor to indicate clickable */
+    cursor: pointer;
 }
 
 .square-image {
-    width: 100%; /* Maintain full width within the container */
-    height: auto; /* Adjust height automatically */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
     border-radius: 8px;
-    margin-bottom: 5px; /* Space between image and title */
+    margin-bottom: 5px; 
 }
 
 .square-wrapper {
@@ -76,46 +75,45 @@
 
 
 .album-title {
-    position: absolute; /* Position the title over the image */
-    bottom: 0; /* Align it to the bottom of the image */
+    position: absolute; 
+    bottom: 0; 
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: center;
     font-size: .7rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 2px 0; /* Padding for better readability */
-    opacity: 0; /* Initially hide the title */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for the hover effect */
+    padding: 2px 0;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
 }
 
 .grid-cell:hover .album-title {
-    opacity: 1; /* Show the title when cell is hovered */
+    opacity: 1;
 }
 
 h1 {
-    margin-bottom: 60px;
+    margin-top: 40px;
+    padding-bottom: 1.5em;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
     animation: glow 3s ease-in-out infinite;
 }
 
 .label-input-container {
-    margin-bottom: 20px; /* This ensures a fixed margin regardless of grid size */
-    z-index: 10;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Add this line to create space between input and button */
+    justify-content: space-between;
     width: auto;
-    margin: 0 auto 20px; /* Centers horizontally and adds a fixed bottom margin */
+    margin: 0 auto 20px; 
 }
 
 .grid-size-label {
-    padding-right: 5px; /* Add padding to the right side of the label */
+    padding-right: 5px; 
 }
    
 .grid-size-input {
@@ -138,14 +136,6 @@ h1 {
     font-size: 1rem;
     text-align: center;
     margin-left: 10px;
-}
-
-.backHomeContainer {
-    position: absolute;
-    bottom: 20%;  /* Adjust this value to move the button up. It's a percentage of the height of the nearest positioned ancestor element. */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
 }
 
 @keyframes glow {
