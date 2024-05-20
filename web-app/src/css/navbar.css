@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #333;
+    background-color: #ffffff;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -17,6 +17,7 @@
   
   .navItem {
     margin: 0 20px; /* Adds horizontal spacing between nav items */
+    
   }
   
   .navLink {
