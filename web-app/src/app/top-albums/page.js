@@ -102,7 +102,7 @@ const AlbumGrid = () => {
             className="grid-size-input"
           />
           <button onClick={randomizeGrid} className="randomize-button">Randomize</button>
-          <button onClick={downloadGrid} className="randomize-button">Download Grid</button>
+          <button onClick={downloadGrid} className="randomize-button">Download</button>
         </div>
         <div id="capture" className="grid-container" style={{ gridTemplateColumns: `repeat(${gridSize}, 1fr)` }}>
           {displayedCells.map(cell => (
